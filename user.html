@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pro2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #042451, #0e1319);
+            background-image: url(./bg.jpg);
+            background-size: 60%;
+            color: rgb(15, 33, 33);
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff; /* Text color for better visibility */
+        }
+
+        table {
+            width: 140%; /* Adjusted width for better responsiveness */
+            margin: 20px auto; /* Center the table */
+            background-color: #14053d;
+            border-radius: 5px;
+            overflow: hidden; /* Prevent table from overflowing its container */
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #ffffff;
+            color: #0dca0d;
+        }
+
+        input {
+            width: 90%;
+            box-sizing: border-box;
+            padding: 8px;
+            margin: 4px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px; /* Add some space between the table and the form */
+        }
+
+        input[type="number"]:read-only {
+            background-color: #f2f2f2;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px; /* Add some space between the form and the calculator */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333; /* Label text color */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px; /* Add some space above the button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-weight: bold;
+            margin-top: 16px;
+        }
+    </style>
+    <title>Calculate Average</title>
+</head>
+<body style="background-color:#0e034d;">
+
+    <h2>Web Technology (23MX15)</h2>
+    
+    <form method="get" action="/pro2">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>CO's</th>
+                    <th>for 100</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>CO-1</th>
+                    <td><input type="number" name="PO-1_1" max="3" class="co-input"></td>
+                </tr>
+                <tr>
+                    <th>CO-2</th>
+                    <td><input type="number" name="PO-2_1" max="3" class="co-input"></td>
+                </tr>
+                <tr>
+                    <th>CO-3</th>
+                    <td><input type="number" name="PO-3_1" max="3" class="co-input"></td>
+                </tr>
+                <tr>
+                    <th>CO-4</th>
+                    <td><input type="number" name="PO-4_1" max="3" class="co-input"></td>
+                </tr>
+                <tr>
+                    <th>Average</th>
+                    <td><input type="number" name="average_PO-1_1" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div class="calculator">
+        <h2>PO Attained Calculator</h2>
+        <form id="poForm">
+            <label for="averageCO">Average of all COs:</label>
+            <input type="number" id="averageCO" step="0.01" required>
+
+            <label for="inputValue">outcome strength:</label>
+            <input type="number" id="inputValue" required>
+
+            <button type="button" onclick="calculatePO()">Calculate PO Attained</button>
+
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <script>
+        // Get all input elements with class "co-input"
+        const coInputElements = document.querySelectorAll('.co-input');
+
+        // Add event listener to each CO input element
+        coInputElements.forEach(input => {
+            input.addEventListener('input', calculateAverage);
+        });
+
+        // Function to calculate average
+        function calculateAverage() {
+            // Get values of the first four CO inputs
+            const coValues = Array.from(coInputElements).map(input => parseFloat(input.value) || 0);
+
+            // Calculate the average
+            const average = coValues.reduce((accumulator, value) => accumulator + value, 0) / coValues.length;
+
+            // Update the corresponding input in the "Average" row
+            const averageInput = document.querySelector('input[name="average_PO-1_1"]');
+            averageInput.value = isNaN(average) ? '' : average.toFixed(2);
+            const avgAll = document.getElementById('averageCO');
+            avgAll.value=averageInput.value;
+        }
+
+        function calculatePO() {
+            // Get values from the form
+            const averageCO = parseFloat(document.getElementById('averageCO').value);
+            const inputValue = parseFloat(document.getElementById('inputValue').value);
+    
+            // Check if both inputs are valid numbers
+            if (!isNaN(averageCO) && !isNaN(inputValue)) {
+                // Calculate PO Attained using the formula
+                const poAttained = (averageCO * inputValue) / 3;
+    
+                // Display the result
+                document.getElementById('result').innerText = `PO Attained: ${poAttained.toFixed(2)}`;
+            } else {
+                // Display an error message if inputs are not valid
+                document.getElementById('result').innerText = 'Invalid input. Please enter valid numbers.';
+            }
+        }
+    </script>
+
+</body>
+</html>

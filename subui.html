@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>courses</title>
+    <link rel="stylesheet" href="subui.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    background-image: url("img 1.jpg");
+    background-size:cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+}
+
+.login-form {
+    padding: 20px;
+    animation: fade-in 1s ease forwards;
+}
+
+
+
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+
+
+
+.login-form button {
+    display:inline-blockflex;
+    margin-left: 30%;
+    margin-bottom:5%;
+    width: 40%;
+    padding: 20px;
+    background: #4b6cb7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fade-in 1s 0.5s ease forwards;
+}
+
+.login-form button:hover {
+    background: #04194d;
+}
+* {box-sizing: border-box;}
+
+
+.header {
+  background-color: #1a0a72;
+  padding: 20px 10px;
+  
+}
+
+
+    </style>
+
+</head>
+<body>
+    <form class="login-form" method="/main">
+    <div class="container">
+        <h2>courses</h2>
+
+        <form action="/subjects2" method="get">
+                
+            <button type="button" class="login-button" onclick="window.location.href = '/subjects'">SEMESTER 1</button>
+
+        </form>
+          
+          <form action="/subjects2" method="get">
+            
+            <button type="button" class="login-button" onclick="window.location.href = '/sem'">SEMESTER 2</button>
+          </form>
+
+          <form action="/subjects" method="get">
+                
+            <button type="button" class="login-button" onclick="openLogin()">SEMESTER 3</button>
+          </form>
+          <form action="/subjects" method="get">
+            
+            <button type="button" class="login-button" onclick="openLogin1()">SEMESTER 4</button>
+          </form>
+       
+       
+
+    </div>
+    <script>
+        function open() {
+  // Redirect to the "/subjects" route
+  window.location.href = '/subjects';
+}
+    function openL() {
+      // Redirect to the "/login" route
+      window.location.href = '/subjects1';
+    }
+    </script>
+</body>
+</html>

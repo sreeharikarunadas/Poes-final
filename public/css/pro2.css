@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    background-image: url("istockphoto-948623158-612x612.jpg");
+    background-size:60%;
+    color: azure;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+

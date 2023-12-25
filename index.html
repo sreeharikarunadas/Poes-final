@@ -1,0 +1,94 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semesters and Courses</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, ul, li, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(./bg.jpg);
+      background-size: cover; /* or 'contain' */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Center content vertically */
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1, h2, p {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #004080;
+      color: white;
+    }
+
+    td {
+      background-color: #fff;
+      color: #333;
+    }
+
+    a {
+      color: #004080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <% console.log("Semesters:", semesters); %>
+    <% if (semesters && semesters.length > 0) { %>
+      <h1>Semesters and Courses</h1>
+      <% semesters.forEach(semester => { %>
+        <h2>Semester <%= semester.semesterId %></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Course ID</th>
+              <th>Course Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% semester.courses.forEach(course => { %>
+              <tr>
+                <td><a href="/pro2"><%= course.courseId %></a></td>
+                <td><%= course.courseName %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% }); %>
+    <% } else { %>
+      <p>No semesters found.</p>
+    <% } %>
+  </div>
+</body>
+</html>

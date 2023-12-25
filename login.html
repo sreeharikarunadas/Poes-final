@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(./360_F_425533281_gA6PiPXw3BRtLwElnQ3QjIsEB7eA1tZX.jpg);
+            opacity: 80%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+            max-width: 100%;
+        }
+
+        .login-form {
+            padding: 30px;
+            animation: fade-in 1s ease forwards;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0f0488;
+            font-size: xx-large;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .login-form input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #2f205b;
+            border-radius: 5px;
+            outline: none;
+            animation: slide-in 1s ease forwards;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .login-form button {
+            width: 50%;
+            padding: 10px;
+            background: #4b6cb7;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            animation: fade-in 1s 0.5s ease forwards;
+            margin-top: 8%;
+            margin-left: 20%;
+        }
+
+        .login-form button:hover {
+            background: #041748;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        .imgcontainer {
+            text-align: center;
+        }
+
+        img.avatar {
+            width: 10%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="login-form" name="myForm" action="/login" method="post">
+            <h2>WELCOME</h2>
+            <div class="imgcontainer">
+                <img src="3837171.png" alt="Avatar" class="avatar">
+            </div>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="username" placeholder="Username" required>
+        
+            <label for="uname"><b>Password</b></label>  
+            <input name="password" type="password" placeholder="Password" required>
+            
+            <button type="submit"><a  style="color: aliceblue;">login</a></button><br>
+            
+           
+        </form>
+    </div>
+</body>
+</html>

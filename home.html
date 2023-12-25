@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(./bg.jpg);
+    background-size:60%;
+    background-color: #0e014a;
+        }
+
+        header {
+    background-color: #f7f7f7;
+    color: #000253;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.login-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 6px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+header div {
+    display: flex;
+}
+
+
+        .container {
+            max-width: 1300px;
+            margin: 60px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #120449;
+        }
+
+       
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        .header-text {
+            text-align: left;
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        .para{
+            padding:30px;
+        }
+        strong{
+            color: rgb(139, 15, 15);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-text">
+            <p><B>P.O.A.E.S</B></p>
+        </div>
+        <div>
+            <form action="/login" method="get">
+                
+                <button type="button" class="login-button" onclick="openLogin()">admin Login</button>
+              </form>
+              <form action="/login1" method="get">
+                
+                <button type="button" class="login-button" onclick="openLogin1()">userLogin</button>
+              </form>
+           
+        </div>
+    </header>
+
+<div class="container">
+    <h2><center>PROGRAMME OUTCOME ATTAINMENT EVAVUALTION SYSTEM</h2></center>
+   
+<br>
+
+<div class="para">
+    <p><strong>1. Computational Knowledge:</strong> Apply knowledge of computing fundamentals, computing specialization, mathematics and domain knowledge to the abstraction and conceptualization of computing models from defined problems and requirements.</p>
+    <br>
+
+    <p><strong>2. Problem Analysis:</strong> Identify, formulate, and solve complex computing problems reaching substantiated conclusions using fundamental principles of mathematics and computing sciences.</p>
+    <br>
+
+    <p><strong>3. Design and Development of Solutions:</strong> Design and evaluate solutions for complex computing problems, and design and evaluate systems, components, or processes as per needs and specifications.</p>
+    <br>
+
+    <p><strong>4. Conduct Investigations of Complex Computing Problems:</strong> Use research-based knowledge and research methods including design and development of algorithms, analysis and interpretation of data and synthesis of information to provide valid conclusions.</p>
+    <br>
+     
+    <p><strong>5. Modern Tool Usage:</strong> Create, select, adapt and apply appropriate techniques, resources, and modern computing tools to complex computing activities with an understanding of the limitations.</p>
+    <br>
+   
+    <p><strong>6. Professional Ethics:</strong> Understand and commit to professional ethics, responsibilities, and norms of professional computing practice.</p>
+    <br>
+
+    <p><strong>7. Life-long Learning:</strong> Recognize the need and have the ability to engage in independent learning for continual development as a computing professional.</p>
+    <br>
+
+    <p><strong>8. Project Management and Finance:</strong> Demonstrate knowledge, understand computing and management principles to apply these to one’s own work as a member and leader in a team to manage projects in multidisciplinary environments.</p>
+    <br>
+
+    <p><strong>9. Communication Efficacy:</strong> Communicate effectively with the computing community and with society at large regarding complex computing, with the ability to comprehend and write effective reports, design documentation, make effective presentations and give and understand clear instructions.</p>
+    <br>
+
+    <p><strong>10. Societal and Environmental Concern:</strong> Understand and assess the needs of the society, within local and global contexts and the consequent responsibilities relevant to professional computing practice.</p>
+    <br>
+
+    <p><strong>11. Individual and Team Work:</strong> Function effectively as an individual and as a member or leader in diverse teams and in multidisciplinary environments.</p>
+    <br>
+
+    <p><strong>12. Innovation and Entrepreneurship:</strong> Identify a timely opportunity and use innovation to create value and wealth for the betterment of the individual and society at large.</p>
+</div>
+</div>
+<script>
+    function openLogin() {
+      // Redirect to the "/login" route
+      window.location.href = '/login';
+    }
+    function openLogin1() {
+      // Redirect to the "/login" route
+      window.location.href = '/login1';
+    }
+    function open() {
+      // Redirect to the "/login" route
+      window.location.href = '/subjects';
+    }
+    function openL() {
+      // Redirect to the "/login" route
+      window.location.href = '/subjects1';
+    }
+  </script>
+
+</body>
+</html>
